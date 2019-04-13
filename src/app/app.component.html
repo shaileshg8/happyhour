@@ -3,13 +3,26 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <div class="input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text">With textarea</span>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8">
+      <div class="jumbotron" style="height: 900px;">
+        
+      </div>
     </div>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
+    <div class="col-4">
+      <div class="jumbotron" style="height: 805px; overflow-y:scroll;">
+        <p *ngFor="let message of messages">{{message.user}}: {{message.text}}</p>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" (click)="sendComment(comment.value)">Send</span>
+        </div>
+        <textarea #comment class="form-control" rows="2" aria-label="Comment"></textarea>
+      </div>
+    </div>
   </div>
 </div>
-
 
 <router-outlet></router-outlet>

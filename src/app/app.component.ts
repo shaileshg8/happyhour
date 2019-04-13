@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'happyhour';
+  messages: any[] = [];
+  sendComment(msg: string) {
+    this.messages.push({
+      user: "user1",
+      text: msg
+    });
+  }
 }
